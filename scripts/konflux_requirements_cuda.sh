@@ -41,7 +41,7 @@ EXTRA_WHEELS="uv-build,uv,pip,maturin,cmake"
 # PYPI_WHEEL_LAST_RESORT use PyPI wheels (last resort). nvidia-* from PyPI always go to the wheel list.
 # Expand PYPI_WHEEL_LAST_RESORT when Hermeto or image build cannot use a sdist (same idea as konflux_requirements.sh).
 # faiss-cpu / llama-index-vector-stores-faiss: keep here until sdist+prefetch path is proven for CUDA.
-PYPI_WHEEL_LAST_RESORT="hf-xet,psycopg2-binary,jiter,docling-parse,tokenizers,torch,torchvision,triton,faiss-cpu,llama-index-vector-stores-faiss,opencv-python,rapidocr,sqlite-vec"
+PYPI_WHEEL_LAST_RESORT="hf-xet,psycopg2-binary,jiter,docling-parse,tokenizers,torch,torchvision,triton,faiss-cpu,llama-index-vector-stores-faiss,opencv-python,rapidocr"
 # pylatexenc: PyPI sdist-only in practice for the resolver path, but RHOAI publishes a rebuilt py3-none-any
 # wheel. uv --universal records PyPI's wheel hash; hermeto installs RHOAI's (*-8-py3-none-any.whl) → mismatch.
 # Pin pulp URL + digest like antlr4 (update filename/hash if RHOAI republishes the wheel).
@@ -235,7 +235,7 @@ if grep -qE '^hf-xet==' "$WHEEL_FILE_PYPI"; then
 else
 	echo "hf-xet==1.2.0" >> "$WHEEL_FILE_PYPI"
 fi
-uv pip compile "$WHEEL_FILE_PYPI" --refresh --generate-hashes --only-binary ':all:' --python-version 3.12 --emit-index-url --no-annotate --constraint ${KONFLUX_DIR}/constraints.cuda.txt > "$WHEEL_HASH_FILE_PYPI"
+uv pip compile "$WHEEL_FILE_PYPI" --refresh --generate-hashes --only-binary ':all:' --python-version 3.12 --emit-index-url --no-annotate --constraint ${KONFLUX_DIR}/constraints.cuda.txt --override ${KONFLUX_DIR}/requirements.overrides.cuda.txt > "$WHEEL_HASH_FILE_PYPI"
 # Lock antlr4 digest to pulp bytes (uv may emit a trailing " \" already; replace whole stanza).
 ANTLR4_WHEEL_SHA256="52d3ffc4af2125d2bf4e7f8e1f3f794f4394c029e491532a47d52f2b7098f14f"
 if grep -q '^antlr4-python3-runtime @ ' "$WHEEL_HASH_FILE_PYPI"; then

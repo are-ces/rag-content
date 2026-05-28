@@ -31,7 +31,7 @@ EXTRA_WHEELS="uv-build,uv,pip,maturin"
 # hf-xet / jiter: Rust sdists fragile under Hermeto; psycopg2-binary: avoid pg_config sdist path.
 # tokenizers: PyPI publishes manylinux wheels; sdist requires Rust/cargo at image build — use wheel only.
 # torch/torchvision/triton: if uv ever resolves these from PyPI, there is no practical sdist — wheels only.
-PYPI_WHEEL_LAST_RESORT="hf-xet,psycopg2-binary,jiter,docling-parse,tokenizers,torch,torchvision,triton,opencv-python,rapidocr,sqlite-vec"
+PYPI_WHEEL_LAST_RESORT="hf-xet,psycopg2-binary,jiter,docling-parse,tokenizers,torch,torchvision,triton,opencv-python,rapidocr"
 
 # Generate requirements list from pyproject.toml from both indexes
 uv pip compile pyproject.toml -o "$RAW_REQ_FILE" \

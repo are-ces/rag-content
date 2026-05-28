@@ -22,12 +22,16 @@ pluggy==1.6.0 \
     --hash=sha256:ff47235aba87db6115b188d26fc1e950f3faa02dfb657d5e2c8f5abdc96c2b2d
 prompt-toolkit==3.0.52 \
     --hash=sha256:cbecd98af732b3adc2d5472bd31e42ff70a3c93bd9e70243eafd76b945aa7cd4
+pydantic-settings==2.12.0 \
+    --hash=sha256:7563bf0c965751373db8281064bdf3486efaf8a61885b8b7336889b2aecd4402
 pylatexenc==2.10 \
     --hash=sha256:df56e08b8c5aeea5d791c2e73cf91eaa746e8c52c0f1a51b249dcf033b6e10e6
 pypdfium2==4.30.0 \
     --hash=sha256:95ca6726411ef3902a8e446446006dbb3b477acfdd964bc9eeb76e9743a77602
 python-docx==1.2.0 \
     --hash=sha256:93e5e606336799cb588b5d0aae34e21cf078107d68e2c545895405d1214fd171
+python-dotenv==1.2.2 \
+    --hash=sha256:c853b87a558b25cbcecc1ac26d04aa8f2ff1cb604fc48083e4100d91645572d5
 python-pptx==1.0.2 \
     --hash=sha256:69f3f0d19bf70c8df5fffad84bbb59508ccd25cd3d41f5b9dd9a843afa388fd6
 rtree==1.4.1 \

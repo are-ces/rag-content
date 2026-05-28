@@ -18,6 +18,11 @@ beautifulsoup4==4.14.3 \
     --hash=sha256:68210693f16dd61027d84465d3e0fc14ed1d47b339cd08900af30760fc29660f
 colorama==0.4.6 \
     --hash=sha256:6a666a04575143daff7ee645ed455ecd7b108f1a1e2bb8afd24e0e58dc7a7969
+cryptography==46.0.7 \
+    --hash=sha256:0ab2a8e458e087bc69b372b28142bcd6075a00b5a243af5929859dc4bccfaebf \
+    --hash=sha256:537fe5301361498d49fef0b7d36d1153bcf6abc81ff993a29c85bb55040e96c7 \
+    --hash=sha256:6c984b35f55539b0c2cbb6e09ac5f20e91dcaead8817f1c842af969a1e5f17c7 \
+    --hash=sha256:98e8d65c1c97595b0b21ff737b69f3be2cd92f8e437b999c4c38220d376f2e66
 dataclasses-json==0.6.7 \
     --hash=sha256:1155da9dafe10961a05459d1e2ae87709913edfaf261d8a2512da91d4fb673ae
 defusedxml==0.7.1 \
